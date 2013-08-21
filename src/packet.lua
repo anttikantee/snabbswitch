@@ -51,6 +51,11 @@ function deref (p)
    return p
 end
 
+-- Tenured packets are not reused by defref().
+function tenure (p)
+   p.refcount = 0
+end
+
 -- Free a packet and all of its buffers.
 function free (p)
    p.info.flags     = 0
