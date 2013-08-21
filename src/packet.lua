@@ -8,7 +8,7 @@ local C = ffi.C
 require("packet_h")
 
 initial_fuel = 1000
-max_packets = 10e5
+max_packets = 1e6
 packets_fl = freelist.new("struct packet *", max_packets)
 packets    = ffi.new("struct packet[?]", max_packets)
 
