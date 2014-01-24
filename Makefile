@@ -19,7 +19,7 @@ $(LUAJIT_O): deps/luajit/Makefile
 	(cd deps/luajit/usr/local/bin; ln -fs luajit-2.1.0-alpha luajit)
 
 $(RUMPSRC):
-	(cd deps/rumprun && ./buildrump.sh -s rumpsrc checkout)
+	(cd deps/rumprun && ./buildrump.sh/buildrump.sh -s rumpsrc checkout)
 
 # XXX: this stage shouldn't be necessary
 $(RUMPMAKE): $(RUMPSRC)
