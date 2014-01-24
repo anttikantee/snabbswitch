@@ -13,7 +13,8 @@ rump kernel networking stack.
 Building
 --------
 
-After updating git submodules, type `make`.
+* `git submodule update --init --recursive`
+* `make`
 
 Testing
 -------
