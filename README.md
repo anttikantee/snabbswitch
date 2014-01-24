@@ -22,3 +22,13 @@ Testing
 
 Note, `snabbswitch` requires either root or `cap_ipc_lock` and available
 huge pages (`/proc/sys/vm/nr_huge_pages`).
+
+TODO
+----
+
+Works, but lots of room for improvements.
+
+* avoid building unnecessary components (build time optimization)
+* various small and large runtime performance optimizations, should
+  result in many-x performance improvements
+* testing could be vastly more comprehensive ... ;-)
