@@ -19,3 +19,6 @@ Testing
 -------
 
 `./snabbswitch -t apps/rumpkernel/rumpkernel`
+
+Note, `snabbswitch` requires either root or `cap_ipc_lock` and available
+huge pages (`/proc/sys/vm/nr_huge_pages`).
