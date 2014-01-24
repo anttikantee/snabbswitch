@@ -2,3 +2,6 @@
 	path = deps/luajit
 	url = http://luajit.org/git/luajit-2.0.git
         ignore = dirty
+[submodule "deps/rumprun"]
+	path = deps/rumprun
+	url = https://github.com/rumpkernel/rumprun
