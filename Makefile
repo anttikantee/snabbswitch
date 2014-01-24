@@ -27,7 +27,7 @@ $(RUMPMAKE): $(RUMPSRC)
 	                         -T rumptools -s ../rumprun/rumpsrc \
 				 -d ../rumprun/rumpdyn tools)
 
-$(LIBSNABBIF_SO): $(RUMPMAKE)
+$(LIBSNABBIF_SO): $(RUMPMAKE) $(LIBRUMP_SO)
 	(cd deps/libsnabbif && $(RUMPMAKE) dependall && $(RUMPMAKE) install)
 
 $(LIBRUMP_SO): deps/rumprun/buildnb.sh
