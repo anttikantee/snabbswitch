@@ -29,6 +29,10 @@ TESTMODS = $(shell find . -regex '[^\#]*\.lua' -printf '%P ' | \
 
 PATH := ../deps/luajit/usr/local/bin:$(PATH)
 
+RUMPKERNEL := $(PWD)/../deps/rumprun/rumpdyn/lib
+RUMPKERNEL_COMPONENTS := -lrumpnet_snabbif -lrumpnet_netinet6	\
+	-lrumpnet_netinet -lrumpnet_net -lrumpnet -lrump -lrumpuser
+
 all: snabbswitch
 
 markdown: $(RMOBJS)
@@ -37,6 +41,8 @@ snabbswitch: $(LUAOBJ) $(HOBJ) $(COBJ)
 	$(E) "LINK      $@"
 	$(Q) gcc -Wl,-E -Werror -Wall -o $@ $^ \
 	    ../deps/luajit/src/libluajit.a \
+	    -L${RUMPKERNEL} -Wl,-R${RUMPKERNEL} -Wl,--no-as-needed \
+	    ${RUMPKERNEL_COMPONENTS} \
 	    -lc -ldl -lm -lrt -lpthread
 	@echo -n "Firmware: "
 	@ls -sh snabbswitch
