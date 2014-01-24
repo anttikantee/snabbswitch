@@ -19,7 +19,7 @@ $(LUAJIT_O): deps/luajit/Makefile
 	(cd deps/luajit/usr/local/bin; ln -fs luajit-2.1.0-alpha luajit)
 
 # XXX: this stage shouldn't be necessary
-$(RUMPMAKE): $(LIRUMP_SO)
+$(RUMPMAKE): $(LIBRUMP_SO)
 	(cd deps/libsnabbif && ../rumprun/buildrump.sh/buildrump.sh \
 	                         -T rumptools -s ../rumprun/rumpsrc \
 				 -d ../rumprun/rumpdyn tools)
